@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { workouts } from "../store/workouts.ts"
+
 
 const route = useRoute()
 const workout = workouts[0]
+const commentValue = ref('')
 
 function handleFavorite() {
   
@@ -48,6 +51,15 @@ function handleBookmark() {
     <UButton size="xs" variant="soft" icon="i-lucide-star" @click.stop="handleFavorite">Favorite</UButton>
     <UButton size="xs" variant="soft" icon="i-lucide-bookmark-check" @click.stop="handleBookmark">To Swim</UButton>
   </div>
+  <USeparator class="my-4"/>
+  <section>
+    <div class="mb-8">
+      <UTextarea v-model="commentValue" placeholder="Workout comments, etc" class="block max-w-xl"/>
+      <UButton>Log Workout</UButton>
+    </div>
+    <h3 class="font-semibold text-xl">Workout Log</h3>
+    <div></div>
+  </section>
 </div>
 
 </template>
