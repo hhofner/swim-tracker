@@ -12,14 +12,25 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "all",
+      component: () => import("./views/All.vue"),
+    },
+    {
+      path: "/favorites",
+      name: "favorites",
+      component: () => import("./views/All.vue"),
+    },
+    {
+      path: "/to-swim",
+      name: "to-swim",
       component: () => import("./views/All.vue"),
     },
     {
       path: "/workout/:id",
       name: "workout",
       component: () => import("./views/Workout.vue"),
-    }
+    },
+    
   ],
   history: createWebHistory(),
 })
