@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 
-interface WholeWorkout {
+export interface WholeWorkout {
   id: number
   title: string
   level: "Beginner" | "Intermediate" | "Advanced"
