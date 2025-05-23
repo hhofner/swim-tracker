@@ -3,9 +3,9 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { workouts } from "../store/workouts.ts"
 
-
 const route = useRoute()
-const workout = workouts[0]
+console.log(route.params.id)
+const workout = workouts[route.params.id - 1]
 const commentValue = ref('')
 
 function handleFavorite() {
@@ -43,7 +43,7 @@ function handleBookmark() {
     <tfoot>
       <tr class="bg-primary/30 p-4">
         <th scope="row" class="p-4 rounded-bl">Total</th>
-        <td class="p-4 rounded-br">33</td>
+        <td class="p-4 rounded-br">{{ workout.total }}</td>
       </tr>
     </tfoot>
   </table>

@@ -25,7 +25,7 @@ export const workouts = reactive<WholeWorkout[]>([
     id: 1,
     name: "Pacific Spiny Lumpsucker",
     level: "Advanced",
-    total: 0,
+    total: 3500,
     subSections: [
       {
         title: "Warmup",
@@ -80,4 +80,124 @@ export const workouts = reactive<WholeWorkout[]>([
       }
     ]
   },
+  {
+    id: 2,
+    name: "Sea Otter",
+    level: "Beginner",
+    total: 800,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "100 swim",
+            total: 100
+          },
+          {
+            title: "100 kick",
+            total: 100
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        multiplier: 3,
+        workouts: [
+          {
+            title: "9x50 @ :20 rest",
+          }
+        ]
+      },
+      {
+        title: "Set 2",
+        workouts: [
+          {
+            title: "100 swim strong, breating every three",
+            total: 100
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "50 easy",
+            total: 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: "Halimeda Ghost Pipefish",
+    id: 3,
+    level: "Intermediate",
+    total: 2800,
+    subSections: [
+      {
+        title: "Warm-up",
+        workouts: [
+          {
+            title: "1x400 swim",
+            total: 400
+          },
+          {
+            title: "1x200 IM drill",
+            total: 200
+          },
+          {
+            title: "1x100",
+            total: 100
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "1x200 @ B+ 20: 50 drill / 50 kick / 50 build / 50 ez",
+            total: 200
+          },
+          {
+            title: "2x50 @ 1:00/1:10: 1 STRONG - 1 ez",
+            total: 200
+          },
+          {
+            title: "1x200 @ B + 15: 50 kick / 50 build / 50 ez / 50 strong",
+            total: 200
+          },
+          {
+            title: "4x50 @ 1:00/1:10: 1 ez - 2 STRONG - 1 ez",
+            total: 200
+          },
+          {
+            title: "1x200 @ B + 10: 50 build / 50 ez / 50 strong / 50 FAST",
+            total: 200
+          },
+          {
+            title: "6x50 @ 1:00/1:10: 1 ez - 1 STRONG - 2 ez - 2 STRONG",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Main Set",
+        workouts: [
+          {
+            title: "3x300 pull or swim descend 1-3, each one ~5 seconds faster than previous",
+            total: 900
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "Your choice warm down",
+            total: 0
+          }
+        ]
+      },
+    ]
+  }
 ])
