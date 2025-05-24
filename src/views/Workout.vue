@@ -8,6 +8,8 @@ const route = useRoute()
 const workout = workouts[route.params.id - 1]
 const commentValue = ref('')
 const workoutLogs = useStorage('workout-logs', [])
+const favoriteWorkouts = useStorage<number[]>('favorite-workouts', [])
+const toSwimWorkouts = useStorage<number[]>('to-swim-workouts', [])
 const swamAllValue = ref(true)
 const swamValue = ref(workout.total)
 
@@ -29,7 +31,21 @@ function handleBookmark() {
   
 }
 
-function handleFavorite() {}
+function handleFavorite() {
+  if (favoriteWorkouts.value.includes(workout.id)) {
+    favoriteWorkouts.value = favoriteWorkouts.value.filter(id => id !== workout.id)
+  } else {
+    favoriteWorkouts.value.push(workout.id)
+  }
+}
+
+function handleBookmark() {
+  if (toSwimWorkouts.value.includes(workout.id)) {
+    toSwimWorkouts.value = toSwimWorkouts.value.filter(id => id !== workout.id)
+  } else {
+    toSwimWorkouts.value.push(workout.id)
+  }
+}
 </script>
 
 <template>
