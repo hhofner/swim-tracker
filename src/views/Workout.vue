@@ -79,16 +79,16 @@ function handleFavorite() {}
       </div>
       <UButton @click="logWorkout">Log Workout</UButton>
     </div>
-    <h3 class="font-semibold text-xl">Workout Log</h3>
+    <h3 class="font-semibold text-xl mb-4">Workout Log</h3>
     <div class="space-y-4">
-      <ul class="list-disc pl-5">
+      <ul class="space-y-4">
         <template v-for="log in workoutLogs">
-          <li :key="log.date" v-if="log.workoutId === workout.id">
-            <div class="flex justify-between">
-              <strong>{{ new Date(log.date).toLocaleDateString() }}</strong>
-              <span>{{ log.swam }} meters</span>
+          <li :key="log.date" v-if="log.workoutId === workout.id" class="flex gap-8">
+            <div class="flex flex-col gap-2">
+              <span>{{ new Date(log.date).toLocaleDateString() }}</span>
+              <UBadge class="font-bold rounded-full" color="neutral" variant="outline">{{ log.swam }} meters</UBadge>
             </div>
-            <div v-if="log.notes" class="mt-2 p-2 bg-gray-100 rounded">
+            <div v-if="log.notes" class="italic">
               {{ log.notes }}
             </div>
           </li>

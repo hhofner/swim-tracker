@@ -68,8 +68,8 @@ const active = computed({
       <header class="sticky top-0 w-full p-2 flex justify-between items-center bg-curious-blue-200 dark:bg-curious-blue-800">
         <h1 class="text-3xl">Swim Tracker 🏊</h1>
       </header>
-      <nav>
-        <UTabs v-model="active" size="md" variant="link" :content="false" :items="items" class="w-full" />
+      <nav class="w-full overflow-scroll bg-white dark:bg-dark">
+        <UTabs v-model="active" size="md" variant="link" :content="false" :items="items" class="" />
       </nav>
     </div>
     <RouterView/>

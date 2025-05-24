@@ -105,6 +105,7 @@ export const workouts = reactive<WholeWorkout[]>([
         workouts: [
           {
             title: "9x50 @ :20 rest",
+            total: 450
           }
         ]
       },
