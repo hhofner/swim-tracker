@@ -64,8 +64,18 @@ function toggleToSwim() {
       <div class="flex justify-between">
         <div>Length: <span class="font-bold">{{ props.total }}</span>m</div>
         <div class="flex gap-2 flex-wrap justify-end">
-          <UButton size="xs" variant="soft" icon="i-lucide-star" @click.stop="toggleFavorite"/>
-          <UButton size="xs" variant="soft" icon="i-lucide-bookmark-check" @click.stop="toggleToSwim"/>
+          <UButton
+            size="xs"
+            :variant="favoriteWorkouts.includes(props.workoutId) ? 'solid' : 'soft'"
+            icon="i-lucide-star"
+            @click.stop="toggleFavorite"
+          />
+          <UButton
+            size="xs"
+            :variant="toSwimWorkouts.includes(props.workoutId) ? 'solid' : 'soft'"
+            icon="i-lucide-bookmark-check"
+            @click.stop="toggleToSwim"
+          />
         </div>
       </div>
     </template>

@@ -77,8 +77,22 @@ function handleBookmark() {
     </tfoot>
   </table>
   <div class="space-x-2">
-    <UButton size="xs" variant="soft" icon="i-lucide-star" @click.stop="handleFavorite">Favorite</UButton>
-    <UButton size="xs" variant="soft" icon="i-lucide-bookmark-check" @click.stop="handleBookmark">To Swim</UButton>
+    <UButton
+      size="xs"
+      :variant="favoriteWorkouts.includes(workout.id) ? 'solid' : 'soft'"
+      icon="i-lucide-star"
+      @click.stop="handleFavorite"
+    >
+      Favorite
+    </UButton>
+    <UButton
+      size="xs"
+      :variant="toSwimWorkouts.includes(workout.id) ? 'solid' : 'soft'"
+      icon="i-lucide-bookmark-check"
+      @click.stop="handleBookmark"
+    >
+      To Swim
+    </UButton>
   </div>
   <USeparator class="my-4"/>
   <section>
