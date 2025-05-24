@@ -25,11 +25,6 @@ function logWorkout() {
   swamValue.value = workout.total
   swamAllValue.value = true
 }
-  
-
-function handleBookmark() {
-  
-}
 
 function handleFavorite() {
   if (favoriteWorkouts.value.includes(workout.id)) {
