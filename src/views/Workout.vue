@@ -1,16 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useStorage } from '@vueuse/core'
 import { useRoute } from 'vue-router'
 import { workouts } from "../store/workouts.ts"
 
 const route = useRoute()
-console.log(route.params.id)
 const workout = workouts[route.params.id - 1]
 const commentValue = ref('')
+const workoutLogs = useStorage('workout-logs', [])
 const swamAllValue = ref(true)
 const swamValue = ref(workout.total)
 
-function handleFavorite() {
+function logWorkout() {
+  const logEntry = {
+    date: new Date().toISOString(),
+    workoutId: workout.id,
+    swam: swamAllValue.value ? workout.total : swamValue.value,
+    notes: commentValue.value,
+  }
+  workoutLogs.value.push(logEntry)
+  commentValue.value = ''
+  swamValue.value = workout.total
+  swamAllValue.value = true
+}
   
 }
 
@@ -64,10 +76,16 @@ function handleBookmark() {
         <UInputNumber placeholder="Amount swam" v-model="swamValue" :disabled="swamAllValue" />
         <UCheckbox v-model="swamAllValue" label="Swam it all" />
       </div>
-      <UButton>Log Workout</UButton>
+      <UButton @click="logWorkout">Log Workout</UButton>
     </div>
     <h3 class="font-semibold text-xl">Workout Log</h3>
-    <div></div>
+    <div>
+      <ul>
+        <li v-for="log in workoutLogs" :key="log.date" v-if="log.workoutId === workout.id">
+          <strong>{{ new Date(log.date).toLocaleDateString() }}</strong>: Swam {{ log.swam }} meters. Notes: {{ log.notes }}
+        </li>
+      </ul>
+    </div>
   </section>
 </div>
 
