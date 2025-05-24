@@ -19,7 +19,7 @@ function handleBookmark() {
 
 <template>
 <div class="p-4">
-  <table class="w-full max-w-2xl text-left mb-4 border border-gray-300">
+  <table class="w-full max-w-2xl text-left mb-4 border border-gray-300 rounded-sm">
     <caption class="text-left text-3xl font-semibold mb-2">
       {{ workout.name}}
     </caption>
