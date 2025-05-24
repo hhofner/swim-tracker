@@ -42,7 +42,10 @@ const items = computed<TabsItem[]>(() => {
 
 const active = computed({
 	get() {
-		return (route.name as string)
+    if (route.name === 'workout') {
+      return `workout/${route.params.id}`
+    }
+    return (route.name as string)
 	},
 	set(tab) {
 		if (tab === 'all') {
