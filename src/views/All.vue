@@ -12,11 +12,11 @@ const selectedLength = ref("All")
 const filteredWorkouts = computed(() => {
   let filtered = workouts
 
-  if (selectedLevel.value !== "All") {
+  if (selectedLevel.value) {
     filtered = filtered.filter(workout => workout.level === selectedLevel.value)
   }
 
-  if (selectedLength.value !== "All") {
+  if (selectedLength.value) {
     const length = parseInt(selectedLength.value, 10)
     filtered = filtered.filter(workout => workout.total <= length)
   }
