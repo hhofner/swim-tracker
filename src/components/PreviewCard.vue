@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
+import { useStorage } from '@vueuse/core';
 
 const props = defineProps<{
   workoutId: number;
-	workoutTitle: string;
-	workouts: number;
-	level: "Beginner" | "Intermediate" | "Advanced";
-	total: number;
+  workoutTitle: string;
+  workouts: number;
+  level: "Beginner" | "Intermediate" | "Advanced";
+  total: number;
 }>()
+
+const favoriteWorkouts = useStorage<number[]>('favorite-workouts', [])
+const toSwimWorkouts = useStorage<number[]>('to-swim-workouts', [])
 
 function getLevelColor(level: string) {
   switch (level) {
@@ -28,12 +32,20 @@ function handleClick() {
   router.push(`/workout/${props.workoutId}`)
 }
 
-function handleFavorite() {
-  // Handle favorite logic here
+function toggleFavorite() {
+  if (favoriteWorkouts.value.includes(props.workoutId)) {
+    favoriteWorkouts.value = favoriteWorkouts.value.filter(id => id !== props.workoutId)
+  } else {
+    favoriteWorkouts.value.push(props.workoutId)
+  }
 }
 
-function handleBookmark() {
-  // Handle bookmark logic here
+function toggleToSwim() {
+  if (toSwimWorkouts.value.includes(props.workoutId)) {
+    toSwimWorkouts.value = toSwimWorkouts.value.filter(id => id !== props.workoutId)
+  } else {
+    toSwimWorkouts.value.push(props.workoutId)
+  }
 }
 </script>
 
@@ -52,8 +64,8 @@ function handleBookmark() {
       <div class="flex justify-between">
         <div>Length: <span class="font-bold">{{ props.total }}</span>m</div>
         <div class="flex gap-2 flex-wrap justify-end">
-          <UButton size="xs" variant="soft" icon="i-lucide-star" @click.stop="handleFavorite"/>
-          <UButton size="xs" variant="soft" icon="i-lucide-bookmark-check" @click.stop="handleBookmark"/>
+          <UButton size="xs" variant="soft" icon="i-lucide-star" @click.stop="toggleFavorite"/>
+          <UButton size="xs" variant="soft" icon="i-lucide-bookmark-check" @click.stop="toggleToSwim"/>
         </div>
       </div>
     </template>
