@@ -19,31 +19,31 @@ function handleBookmark() {
 
 <template>
 <div class="p-4">
-  <table class="w-full max-w-2xl text-left mb-4">
+  <table class="w-full max-w-2xl text-left mb-4 border border-gray-300">
     <caption class="text-left text-3xl font-semibold mb-2">
       {{ workout.name}}
     </caption>
-    <thead class="p-4">
-      <tr class="bg-primary p-4">
-        <th scope="col" class="p-3 rounded-tl">Exercise</th>
-        <th scope="col" class="p-3 rounded-tr">Amount</th>
+    <thead>
+      <tr class="bg-primary text-white">
+        <th scope="col" class="p-3 border-b border-gray-300">Exercise</th>
+        <th scope="col" class="p-3 border-b border-gray-300">Amount</th>
       </tr>
     </thead>
     <tbody>
       <template v-for="subsection in workout.subSections">
-        <tr v-if="subsection.title">
-          <td colspan="2" class="p-2 bg-secondary/30">{{subsection.title}}</td>
+        <tr v-if="subsection.title" class="bg-secondary/30">
+          <td colspan="2" class="p-2 font-semibold border-b border-gray-300">{{subsection.title}}</td>
         </tr>
-        <tr v-for="exercise in subsection.workouts">
-          <td class="p-1">{{exercise.title}}</td>
-          <td class="p-1">{{exercise.total}}</td>
+        <tr v-for="exercise in subsection.workouts" class="odd:bg-white even:bg-gray-100">
+          <td class="p-2 border-b border-gray-300">{{exercise.title}}</td>
+          <td class="p-2 border-b border-gray-300 text-right">{{exercise.total}}</td>
         </tr>
       </template>
     </tbody>
     <tfoot>
-      <tr class="bg-primary/30 p-4">
-        <th scope="row" class="p-4 rounded-bl">Total</th>
-        <td class="p-4 rounded-br">{{ workout.total }}</td>
+      <tr class="bg-primary/30">
+        <th scope="row" class="p-4 border-t border-gray-300">Total</th>
+        <td class="p-4 border-t border-gray-300 text-right">{{ workout.total }}</td>
       </tr>
     </tfoot>
   </table>
