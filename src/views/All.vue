@@ -7,7 +7,21 @@ import { workouts } from "../store/workouts.ts"
 
 const selectedLevel = ref("All")
 
+const selectedLength = ref("All")
+
 const filteredWorkouts = computed(() => {
+  let filtered = workouts
+
+  if (selectedLevel.value !== "All") {
+    filtered = filtered.filter(workout => workout.level === selectedLevel.value)
+  }
+
+  if (selectedLength.value !== "All") {
+    const length = parseInt(selectedLength.value, 10)
+    filtered = filtered.filter(workout => workout.total <= length)
+  }
+
+  return filtered
   if (selectedLevel.value === "All") {
     return workouts
   }
@@ -17,7 +31,7 @@ const filteredWorkouts = computed(() => {
 
 <template>
   <div>
-    <FilterOptions v-model="selectedLevel" />
+    <FilterOptions v-model:level="selectedLevel" v-model:length="selectedLength" />
     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-2 py-4">
       <PreviewCard v-for="workout in filteredWorkouts" :key="workout.id" :workout-title="workout.name" :total="workout.total" :level="workout.level"
       :workouts="8" :workout-id="workout.id" />
