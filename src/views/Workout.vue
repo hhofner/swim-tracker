@@ -24,11 +24,12 @@ function logWorkout() {
   swamAllValue.value = true
 }
   
-}
 
 function handleBookmark() {
   
 }
+
+function handleFavorite() {}
 </script>
 
 <template>
@@ -81,9 +82,11 @@ function handleBookmark() {
     <h3 class="font-semibold text-xl">Workout Log</h3>
     <div>
       <ul>
-        <li v-for="log in workoutLogs" :key="log.date" v-if="log.workoutId === workout.id">
-          <strong>{{ new Date(log.date).toLocaleDateString() }}</strong>: Swam {{ log.swam }} meters. Notes: {{ log.notes }}
-        </li>
+        <template v-for="log in workoutLogs">
+          <li :key="log.date" v-if="log.workoutId === workout.id">
+            <strong>{{ new Date(log.date).toLocaleDateString() }}</strong>: Swam {{ log.swam }} meters. Notes: {{ log.notes }}
+          </li>
+        </template>
       </ul>
     </div>
   </section>
