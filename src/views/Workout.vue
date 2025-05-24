@@ -7,6 +7,8 @@ const route = useRoute()
 console.log(route.params.id)
 const workout = workouts[route.params.id - 1]
 const commentValue = ref('')
+const swamAllValue = ref(true)
+const swamValue = ref(workout.total)
 
 function handleFavorite() {
   
@@ -32,7 +34,10 @@ function handleBookmark() {
     <tbody>
       <template v-for="subsection in workout.subSections">
         <tr v-if="subsection.title" class="bg-secondary/30">
-          <td colspan="2" class="p-2 font-semibold border-b border-gray-300">{{subsection.title}}</td>
+          <td colspan="2" class="p-2 font-semibold border-b border-gray-300">
+            <span>{{subsection.title}}</span>
+            <span v-if="subsection.multiplier" class="ml-4 text-sm text-stone-500">{{subsection.multiplier}} times through</span>
+          </td>
         </tr>
         <tr v-for="exercise in subsection.workouts" class="odd:bg-white even:bg-gray-100">
           <td class="p-2 border-b border-gray-300">{{exercise.title}}</td>
@@ -53,8 +58,12 @@ function handleBookmark() {
   </div>
   <USeparator class="my-4"/>
   <section>
-    <div class="mb-8">
+    <div class="mb-8 space-y-4">
       <UTextarea v-model="commentValue" placeholder="Workout comments, etc" class="block max-w-xl"/>
+      <div class="flex gap-4 items-center">
+        <UInputNumber placeholder="Amount swam" v-model="swamValue" :disabled="swamAllValue" />
+        <UCheckbox v-model="swamAllValue" label="Swam it all" />
+      </div>
       <UButton>Log Workout</UButton>
     </div>
     <h3 class="font-semibold text-xl">Workout Log</h3>
