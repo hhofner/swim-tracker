@@ -2,26 +2,43 @@
 import { computed, ref } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import type { TabsItem } from "@nuxt/ui"
+import { workouts } from "./store/workouts"
 
 const route = useRoute()
 const router = useRouter()
-const items = ref<TabsItem[]>([
-	{
-		label: "All",
-		icon: "i-lucide-home",
-		value: "all"
-	},
-	{
-		label: "Favorites",
-		icon: "i-lucide-star",
-		value: "favorites"
-	},
-	{
-		label: "To Swim",
-		icon: "i-lucide-bookmark-check",
-		value: "to-swim"
-	},
-])
+const items = computed<TabsItem[]>(() => {
+  const baseItems: TabsItem[] = [
+    {
+      label: "All",
+      icon: "i-lucide-home",
+      value: "all"
+    },
+    {
+      label: "Favorites",
+      icon: "i-lucide-star",
+      value: "favorites"
+    },
+    {
+      label: "To Swim",
+      icon: "i-lucide-bookmark-check",
+      value: "to-swim"
+    },
+  ]
+
+  const workoutId = route.params.id
+  if (workoutId) {
+    const workout = workouts.find(w => w.id === Number(workoutId))
+    if (workout) {
+      baseItems.push({
+        label: workout.name,
+        icon: "i-lucide-dumbbell",
+        value: `workout/${workout.id}`
+      })
+    }
+  }
+
+  return baseItems
+})
 
 const active = computed({
 	get() {
