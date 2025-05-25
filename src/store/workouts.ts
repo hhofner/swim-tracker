@@ -2,7 +2,7 @@ import { reactive } from 'vue'
 
 export interface WholeWorkout {
   id: number
-  title: string
+  name: string
   level: "Beginner" | "Intermediate" | "Advanced"
   total: number
   subSections: SubSection[]

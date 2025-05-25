@@ -18,12 +18,12 @@ const router = createRouter({
     {
       path: "/favorites",
       name: "favorites",
-      component: () => import("./views/All.vue"),
+      component: () => import("./views/Favorites.vue"),
     },
     {
       path: "/to-swim",
       name: "to-swim",
-      component: () => import("./views/All.vue"),
+      component: () => import("./views/ToSwim.vue"),
     },
     {
       path: "/workout/:id",
