@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue"
+import { computed } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import type { TabsItem } from "@nuxt/ui"
 import { workouts } from "./store/workouts"
@@ -68,7 +68,7 @@ const active = computed({
       <header class="sticky top-0 w-full p-2 flex justify-between items-center bg-curious-blue-200 dark:bg-curious-blue-800">
         <h1 class="text-3xl">Swim Tracker 🏊</h1>
       </header>
-      <nav class="w-full overflow-scroll bg-white dark:bg-dark">
+      <nav class="w-full bg-white dark:bg-default py-1 overflow-x-scroll">
         <UTabs v-model="active" size="md" variant="link" :content="false" :items="items" class="" />
       </nav>
     </div>
