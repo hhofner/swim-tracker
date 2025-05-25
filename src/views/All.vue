@@ -12,6 +12,10 @@ const selectedLength = ref("All")
 const filteredWorkouts = computed(() => {
   let filtered = workouts
 
+  if (selectedLevel.value === "All") {
+    return workouts
+  }
+
   if (selectedLevel.value) {
     filtered = filtered.filter(workout => workout.level === selectedLevel.value)
   }
@@ -22,10 +26,6 @@ const filteredWorkouts = computed(() => {
   }
 
   return filtered
-  if (selectedLevel.value === "All") {
-    return workouts
-  }
-  return workouts.filter(workout => workout.level === selectedLevel.value)
 })
 </script>
 
