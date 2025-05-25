@@ -5,9 +5,9 @@ import PreviewCard from "../components/PreviewCard.vue"
 import FilterOptions from "../components/Filter.vue"
 import { workouts } from "../store/workouts.ts"
 
-const selectedLevel = ref("All")
+const selectedLevel = ref()
 
-const selectedLength = ref("All")
+const selectedLength = ref()
 
 const filteredWorkouts = computed(() => {
   let filtered = workouts

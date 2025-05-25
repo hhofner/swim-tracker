@@ -2,7 +2,7 @@
 import { ref } from "vue"
 
 const levelItems = ref(['Advanced', 'Intermediate', 'Beginner'])
-const lengthItems = ref(['500', '1000', '1500', '2000', '2500', '3000'])
+const lengthItems = ref(['1000', '2000', '3000', '4000', '5000'])
 const levelValue = defineModel('level')
 const lengthValue = defineModel('length')
 
