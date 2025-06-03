@@ -3,6 +3,7 @@ import "./assets/main.css"
 import { createApp } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
 import uiPlugin from "@nuxt/ui/vue-plugin"
+import { registerSW } from 'virtual:pwa-register'
 
 import App from "./App.vue"
 
@@ -44,3 +45,14 @@ app.use(uiPlugin)
 app.use(router)
 
 app.mount("#app")
+
+// Register PWA service worker
+const updateSW = registerSW({
+  onNeedRefresh() {
+    // Show a prompt to user to refresh the app
+    console.log('New content available, please refresh!')
+  },
+  onOfflineReady() {
+    console.log('App ready to work offline')
+  },
+})

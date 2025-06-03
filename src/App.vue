@@ -3,6 +3,7 @@ import { computed } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import type { TabsItem } from "@nuxt/ui"
 import { workouts } from "./store/workouts"
+import PwaInstallBanner from "./components/PwaInstallBanner.vue"
 
 const route = useRoute()
 const router = useRouter()
@@ -70,7 +71,7 @@ const active = computed({
 <template>
   <UApp>
     <div class="sticky top-0">
-      <header class="sticky top-0 w-full p-2 flex justify-between items-center bg-curious-blue-200 dark:bg-curious-blue-800">
+      <header class="sticky top-0 w-full z-80 p-2 flex justify-between items-center bg-curious-blue-200 dark:bg-curious-blue-800">
         <h1 class="text-3xl">Swim Tracker 🏊</h1>
         <UButton variant="ghost" color="info" @click="router.push('/about')">
           <UIcon name="i-lucide-info" class="mr-1 w-4 h-4" />
@@ -82,5 +83,6 @@ const active = computed({
       </nav>
     </div>
     <RouterView/>
+    <PwaInstallBanner />
   </UApp>
 </template>
