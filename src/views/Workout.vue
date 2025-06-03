@@ -55,7 +55,7 @@ function handleBookmark() {
   <div class="p-4">
     <table class="w-full max-w-2xl text-left mb-4 border border-gray-300 dark:border-gray-700 rounded-sm">
       <caption class="text-left text-3xl font-semibold mb-2 dark:text-white">
-        {{ workout.title }}
+        {{ workout.name }}
       </caption>
       <thead>
         <tr class="bg-primary text-white dark:bg-primary-800">
