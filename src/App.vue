@@ -23,6 +23,11 @@ const items = computed<TabsItem[]>(() => {
       icon: "i-lucide-bookmark-check",
       value: "to-swim"
     },
+    {
+      label: "About",
+      icon: "i-lucide-info",
+      value: "about"
+    },
   ]
 
   const workoutId = route.params.id
@@ -67,6 +72,10 @@ const active = computed({
     <div class="sticky top-0">
       <header class="sticky top-0 w-full p-2 flex justify-between items-center bg-curious-blue-200 dark:bg-curious-blue-800">
         <h1 class="text-3xl">Swim Tracker 🏊</h1>
+        <UButton variant="ghost" color="info" @click="router.push('/about')">
+          <UIcon name="i-lucide-info" class="mr-1 w-4 h-4" />
+          About
+        </UButton>
       </header>
       <nav class="w-full bg-white dark:bg-default py-1 overflow-x-scroll">
         <UTabs v-model="active" size="md" variant="link" :content="false" :items="items" class="" />

@@ -30,6 +30,11 @@ const router = createRouter({
       name: "workout",
       component: () => import("./views/Workout.vue"),
     },
+    {
+      path: "/about",
+      name: "about",
+      component: () => import("./views/About.vue"),
+    },
     
   ],
   history: createWebHistory(),
