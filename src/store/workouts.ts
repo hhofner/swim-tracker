@@ -200,5 +200,266 @@ export const workouts = reactive<WholeWorkout[]>([
         ]
       },
     ]
+  },
+  {
+    id: 4,
+    name: "Shortfin Squid",
+    level: "Beginner",
+    total: 900,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "2 x 100 warm up @ :30 rest",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "4 x 25 @ :30 rest, SPRINT",
+            total: 100,
+            notes: "Breathe as few times as possible on these"
+          },
+          {
+            title: "4 x 50 @ :15 rest",
+            total: 200,
+            notes: "Active recovery, you can go slowly but keep moving and do your best to stick with the :15 rest"
+          },
+          {
+            title: "4 x 25 @ :30 rest, SPRINT",
+            total: 100,
+            notes: "Again, breathing as few times as possible"
+          },
+          {
+            title: "4 x 50 @ :15 rest",
+            total: 200,
+            notes: "Active recovery, you can go slowly but keep moving and do your best to stick with the :15 rest"
+          },
+          {
+            title: "100 freestyle warmdown",
+            total: 100,
+            notes: "swim slowly and relax"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 5,
+    name: "Sea Bunny",
+    level: "Beginner",
+    total: 1200,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "8 x 25 kick with board @ :15 rest",
+            total: 200
+          },
+          {
+            title: "4 x 50 swim alternate free/stroke by 25 @ :20 rest",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "8 x 25 kick, evens fast, odds easy @ :10 rest",
+            total: 200
+          },
+          {
+            title: "8 x 25 swim freestyle @ :15 rest",
+            total: 200
+          },
+          {
+            title: "4 x 50 swim @ :20 rest",
+            total: 200
+          },
+          {
+            title: "8 x 25 odds FAST freestyle, evens easy stroke @ :10 rest",
+            total: 200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    name: "Marrus Orthocanna",
+    level: "Intermediate",
+    total: 1750,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "250 your choice",
+            total: 250
+          }
+        ]
+      },
+      {
+        title: "Main Set",
+        workouts: [
+          {
+            title: "4 x 100 stroke (your choice) @ :15 rest",
+            total: 400
+          },
+          {
+            title: "200 freestyle @ :20 rest",
+            total: 200,
+            notes: "alternate breathing every 3 on odd laps, every 4 on even laps"
+          },
+          {
+            title: "4 x 100 freestyle @ :15 rest",
+            total: 400,
+            notes: "breathing every 2 or 4 ON YOUR WEAKEST SIDE"
+          },
+          {
+            title: "250 freestyle breathing pattern",
+            total: 250,
+            notes: "25 breathing every 6, 50 breathing every 5 (alternating sides), 75 breathing every 4, 100 breathing every 3 (alternating sides)"
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "250 easy",
+            total: 250
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    name: "Red Spotted Blenny",
+    level: "Intermediate",
+    total: 1600,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 easy",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "3×100 free swim @ b +5",
+            total: 300,
+            notes: "nice and smooth"
+          },
+          {
+            title: "1×300 free swim @ b",
+            total: 300,
+            notes: "at a comfortable pace"
+          },
+          {
+            title: "3×100 free swim @ b",
+            total: 300,
+            notes: "cruise"
+          },
+          {
+            title: "1×300 free swim @ b descend to fast",
+            total: 300,
+            notes: "start out swim nice and smooth, by end should be going fast"
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "4 x 50 kick down (no board), easy back @ b +20",
+            total: 200,
+            notes: "or your choice, nice and smooth"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    name: "Squirrelfish",
+    level: "Intermediate",
+    total: 1400,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 swim",
+            total: 200
+          },
+          {
+            title: "6 x 50 kick @ :15 rest",
+            total: 300
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "4 x 25 @ :30 (or whatever is a comfortable base)",
+            total: 100
+          },
+          {
+            title: "100 @ b+15",
+            total: 100,
+            notes: ":30 rest"
+          },
+          {
+            title: "2 x 50 @ b +5",
+            total: 100
+          },
+          {
+            title: "100 @ b+15",
+            total: 100,
+            notes: ":45 rest"
+          },
+          {
+            title: "1 x 100 @ b",
+            total: 100
+          },
+          {
+            title: "100 @ b+15",
+            total: 100,
+            notes: "1:00 rest"
+          },
+          {
+            title: "100 @ b -5 (that's right!)",
+            total: 100
+          },
+          {
+            title: "100 @ b+15",
+            total: 100
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "100 easy",
+            total: 100
+          }
+        ]
+      }
+    ]
   }
 ])
