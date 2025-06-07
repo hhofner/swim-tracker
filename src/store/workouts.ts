@@ -461,5 +461,477 @@ export const workouts = reactive<WholeWorkout[]>([
         ]
       }
     ]
+  },
+  {
+    id: 9,
+    name: "Squidworm",
+    level: "Intermediate",
+    total: 1400,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 swim your choice",
+            total: 200
+          },
+          {
+            title: "100 kick",
+            total: 100
+          },
+          {
+            title: "100 pull (buoy, no paddles)",
+            total: 100
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        multiplier: 4,
+        workouts: [
+          {
+            title: "25 build up (start slow, build to fast) @ :15 rest",
+            total: 25
+          },
+          {
+            title: "25 build down (start fast off the wall, ease down to slow) @ :15 rest",
+            total: 25
+          },
+          {
+            title: "25 easy @ :15 rest",
+            total: 25
+          },
+          {
+            title: "25 FAST @ 15 rest",
+            total: 25
+          }
+        ]
+      },
+      {
+        title: "Set 2",
+        workouts: [
+          {
+            title: "4 x 50 kick @ :20 rest",
+            total: 200,
+            notes: "Your legs will probably be tired after the 25s, try to maintain some form and hold a steady pace on these"
+          }
+        ]
+      },
+      {
+        title: "Set 3",
+        workouts: [
+          {
+            title: "300 swim straight",
+            total: 300
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "100 choice",
+            total: 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    name: "Leafy Seadragon",
+    level: "Intermediate",
+    total: 1150,
+    subSections: [
+      {
+        title: "Warmup",
+        workouts: [
+          {
+            title: "2 x 75 swim @ :15 rest, nice and smooth, on middle 25 breathe only to weak side",
+            total: 150
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "4 x 50 @ :10 rest, second 25 stroke",
+            total: 200,
+            notes: "ideally backstroke, which is a helpful stroke for orienting yourself and catching your breath during open water swims. Breaststroke is also good."
+          }
+        ]
+      },
+      {
+        title: "Set 2",
+        workouts: [
+          {
+            title: "4x100 @ 15 seconds rest, descending:",
+            total: 400,
+            notes: "No. 1 @ 70 percent effort, No. 2 @ 80 percent effort, No. 3 @ 90 percent effort, No. 4 @ 95 percent effort"
+          }
+        ]
+      },
+      {
+        title: "Set 3",
+        workouts: [
+          {
+            title: "200 easy pull with buoy (paddles optional), breathe every 3 (bi-lateral breathing)",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Set 4",
+        workouts: [
+          {
+            title: "4x25 @ :10 rest, sprint—>AS FAST AS YOU CAN GO",
+            total: 100
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "100 easy",
+            total: 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 11,
+    name: "Lizard Island Octopus",
+    level: "Intermediate",
+    total: 1100,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "50 swim, 50 kick, 50 swim (swam as a 150)",
+            total: 150
+          }
+        ]
+      },
+      {
+        title: "Main Set",
+        multiplier: 2,
+        workouts: [
+          {
+            title: "100 smooth @ :20 rest",
+            total: 100
+          },
+          {
+            title: "100 negative split (second half faster than first) @ :30 rest",
+            total: 100
+          },
+          {
+            title: "100 smooth @ :20 rest",
+            total: 100
+          },
+          {
+            title: "100 FAST @ :30 rest",
+            total: 100,
+            notes: "Go right into the second round after you take :30 following the fast 100"
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "3 x 50 easy @ :20 rest",
+            total: 150
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 12,
+    name: "Juvenile Emperor Angelfish",
+    level: "Advanced",
+    total: 1900,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 swim",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "4 x 100 alt free/IM @ b +25",
+            total: 400
+          }
+        ]
+      },
+      {
+        title: "Set 2",
+        workouts: [
+          {
+            title: "1 x 150 free @ b +10",
+            total: 150
+          },
+          {
+            title: "2 x 50 stroke @ b +20",
+            total: 100
+          },
+          {
+            title: "2 x 150 free @ b +15",
+            total: 300
+          },
+          {
+            title: "4 x 50 stroke @ b +20",
+            total: 200
+          },
+          {
+            title: "1 x 150 free @ b +20",
+            total: 150
+          },
+          {
+            title: "6 x 50 stroke @ b +20",
+            total: 300
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "100 easy",
+            total: 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 13,
+    name: "Anglerfish",
+    level: "Advanced",
+    total: 2000,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 swim",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "4 x 50 kick @ kb",
+            total: 200
+          },
+          {
+            title: "6 x 50 reverse IM order @ b +15",
+            total: 300
+          }
+        ]
+      },
+      {
+        title: "Set 2",
+        workouts: [
+          {
+            title: "3 x 100 free @ b",
+            total: 300
+          },
+          {
+            title: "200 IM @ b +30",
+            total: 200
+          },
+          {
+            title: "2 x 100 free @ b",
+            total: 200
+          },
+          {
+            title: "2 x 100 IM @ b +20",
+            total: 200
+          },
+          {
+            title: "1 x 100 free @ b",
+            total: 100
+          },
+          {
+            title: "4 x 50 IM order @ b +10",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "100 easy",
+            total: 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 14,
+    name: "Sea Pen",
+    level: "Advanced",
+    total: 1800,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "300 swim",
+            total: 300
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "2 x 300 @ b +30",
+            total: 600
+          },
+          {
+            title: ":30 rest",
+            total: 0
+          },
+          {
+            title: "2 x 200 @ b",
+            total: 400
+          },
+          {
+            title: ":30 rest",
+            total: 0
+          },
+          {
+            title: "4 x 100 @ b -5",
+            total: 400
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "100 easy",
+            total: 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 15,
+    name: "Hairy Frogfish",
+    level: "Intermediate",
+    total: 1300,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 choice",
+            total: 200
+          }
+        ]
+      },
+      {
+        title: "Main Set",
+        workouts: [
+          {
+            title: "3 x 300 free @ b —> Goal is to hold b -15",
+            total: 900
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "200 easy",
+            total: 200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 16,
+    name: "Clownfish",
+    level: "Advanced",
+    total: 2000,
+    subSections: [
+      {
+        title: "Warm Up",
+        workouts: [
+          {
+            title: "200 choice",
+            total: 200
+          },
+          {
+            title: "8 x 50 @ 10 seconds rest",
+            total: 400,
+            notes: "odds kick, evens swim"
+          }
+        ]
+      },
+      {
+        title: "Set 1",
+        workouts: [
+          {
+            title: "100 free @ b +5",
+            total: 100
+          },
+          {
+            title: "6 x 25 stroke @ :30 (or slower base if needed)",
+            total: 150
+          },
+          {
+            title: "100 free @ b+5",
+            total: 100
+          },
+          {
+            title: "6 x 50 stroke @ b+20",
+            total: 300
+          }
+        ]
+      },
+      {
+        title: "Set 2",
+        workouts: [
+          {
+            title: "4 x 100 kick @ kb",
+            total: 400
+          },
+          {
+            title: "8 x 25 @ :30",
+            total: 200,
+            notes: "4x: 25 only two breaths, 25 half sprint half easy, 25 only 2 breaths, 25 half easy half sprint"
+          }
+        ]
+      },
+      {
+        title: "Warm Down",
+        workouts: [
+          {
+            title: "150 easy",
+            total: 150
+          }
+        ]
+      }
+    ]
   }
 ])
