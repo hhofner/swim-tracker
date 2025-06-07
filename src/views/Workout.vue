@@ -98,9 +98,9 @@ function handleBookmark() {
     <USeparator class="my-4" />
     <section>
       <div class="mb-8 space-y-4">
-        <UTextarea v-model="commentValue" placeholder="Workout comments, etc" class="block max-w-xl" />
+        <UTextarea v-model="commentValue" placeholder="Workout comments, etc" class="block max-w-xl text-base" />
         <div class="flex gap-4 items-center">
-          <UInputNumber placeholder="Amount swam" v-model="swamValue" :disabled="swamAllValue" />
+          <UInputNumber placeholder="Amount swam" v-model="swamValue" :disabled="swamAllValue" class="text-base" />
           <UCheckbox v-model="swamAllValue" label="Swam it all" />
         </div>
         <UButton @click="logWorkout">Log Workout</UButton>
